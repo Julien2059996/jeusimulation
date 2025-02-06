@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Exercice4 : MonoBehaviour
+public class Exercice5 : MonoBehaviour
 {
     private Coroutine currentMoveCoroutine;
     public float moveSpeed = 5f;
@@ -37,7 +37,7 @@ public class Exercice4 : MonoBehaviour
             while (Vector3.Distance(transform.position, targetPosition) > 0.5f)
             {
                 transform.position += direction * moveSpeed * Time.deltaTime;
-
+                transform.LookAt(targetPosition);
                 yield return null;
             }
 
